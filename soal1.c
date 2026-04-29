@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// deklarasi variabel struct
 typedef struct {
     char nama[101];
     char kategori[101];
@@ -19,8 +20,10 @@ typedef struct {
     int nilai;
 } Artefak;
 
+// deklarasi array dari struct
 Artefak array[10001];
 
+// prosedur untuk melakukan sorting artefak menggunakan bubble sort
 void sort_artefak(int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
@@ -63,10 +66,13 @@ void sort_artefak(int n) {
     }
 }
 
+// fungsi utama
 int main() {
+    // deklarasi variabel perulangan
     int N;
     scanf("%d ", &N);
 
+    // looping input masing-masing artefak
     for (int i = 0; i < N; i++) {
         scanf("%s %s %d %d", array[i].nama, array[i].kategori, &array[i].tahun, &array[i].nilai); //Perbaikan 1: pada input integer tidak menggunakan tanda '&'
     }
@@ -77,8 +83,10 @@ int main() {
     }
     printf("============================================\n");*/
 
+    // pemanggilan prosedur sorting artefak
     sort_artefak(N);
 
+    // looping output artefak yang telah terurut sesuai spesifikasi
     for (int i = 0; i < N; i++) {
         printf("%s %s %d %d\n", array[i].nama, array[i].kategori, array[i].tahun, array[i].nilai);
     }
